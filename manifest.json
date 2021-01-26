@@ -3,12 +3,11 @@
   "name": "User Style Sheet Workaround",
   "version": "1",
 
-  "permissions": [
-    "*://*/*",
-    "webNavigation"
-  ],
-
-  "background" : {
-    "scripts": ["background.js"]
-  }
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "exclude_matches": ["*://localhost/*"],
+      "css": ["default.css"]
+    }
+  ]
 }
